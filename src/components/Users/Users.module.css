@@ -1,0 +1,55 @@
+.userWrapper {
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.users {
+    width: 300px;
+    margin: 10px;
+    padding: 15px;
+    border: 1px dotted black;
+}
+
+.users h3 {
+    text-align: center;
+}
+
+.users div {
+    margin: 5px;
+    padding: 5px;
+}
+
+.postButton {
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.posts {
+    background-color: #9aaf66;
+    color: black;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+}
+
+.posts:hover {
+    background-color: #4CAF50;
+    color: white;
+}
