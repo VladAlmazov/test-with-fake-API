@@ -12,7 +12,7 @@
     width: 300px;
     margin: 10px;
     padding: 15px;
-    border: 1px dotted black;
+    border: 2px solid indigo;
 }
 
 .users h3 {
@@ -28,28 +28,24 @@
     text-align: center;
 }
 
-button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
 .posts {
-    background-color: #9aaf66;
-    color: black;
-    border: 2px solid #4CAF50;
+    outline: none;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 18px;
+    border: 2px solid indigo;
+    background-color: indigo;
+    color: white;
     border-radius: 10px;
+    font-weight: bold;
 }
 
 .posts:hover {
     background-color: #4CAF50;
+    color: white;
+}
+
+.posts:active {
+    background-color: indigo;
     color: white;
 }

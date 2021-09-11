@@ -45,10 +45,8 @@ export const Users = (props: UserPropsType) => {
                         {u.company.bs}
                     </div>
                     <div className={style.postButton}>
-                        <NavLink to={`/user/${u.id}`}>
-                            <button className={style.posts}>
+                        <NavLink to={`/user/${u.id}`} className={style.posts}>
                                 Posts
-                            </button>
                         </NavLink>
                     </div>
                 </div>)

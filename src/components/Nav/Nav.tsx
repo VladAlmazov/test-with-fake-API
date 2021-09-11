@@ -7,7 +7,7 @@ export const Nav = () => {
     return (
         <nav className={style.navContainer}>
             <div>
-                <NavLink to={'/users'}>Users</NavLink>
+                <NavLink to={'/users'} className={style.navLink}>Users</NavLink>
             </div>
         </nav>
     );

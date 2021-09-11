@@ -1,0 +1,56 @@
+.detailsButton {
+    outline: none;
+    text-decoration: none;
+    margin: 10px;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid indigo;
+    background-color: indigo;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.detailsButton:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.detailsButton:active {
+    background-color: indigo;
+    color: white;
+}
+
+.postsWrapper {
+    height: 100%;
+    width: 40%;
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border: 1px solid indigo;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.titleBlock {
+    width: 100%;
+    text-align: center;
+    color: indigo;
+}
+
+.bodyBlock {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid indigo;
+    border-radius: 10px;
+}
+
+.addButton {
+    width: 100%;
+    text-align: center;
+}

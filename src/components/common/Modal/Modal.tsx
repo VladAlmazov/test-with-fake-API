@@ -24,16 +24,26 @@ export const Modal = (props: ModalPropsType) => {
              onClick={setActiveModal}>
             <div className={props.active ? 'modal_content active' : 'modal_content'}
                  onClick={(e) => e.stopPropagation()}>
+                <h2>
+                    Write a new post:
+                </h2>
                 <div>
                     <input value={titleValue}
-                           onChange={(e) => setTitleValue(e.currentTarget.value)}/>
+                           onChange={(e) => setTitleValue(e.currentTarget.value)}
+                           placeholder={'Title'}
+                           className="addNewTitle"/>
                 </div>
                 <div>
                 <textarea value={newText}
-                          onChange={(e) => setNewText(e.currentTarget.value)}/>
+                          onChange={(e) => setNewText(e.currentTarget.value)}
+                          placeholder={'Your message'}
+                          className="addNewText"/>
                 </div>
                 <div>
-                    <button onClick={() => onAddPost(titleValue, newText)}>Send</button>
+                    <button onClick={() => onAddPost(titleValue, newText)}
+                            className="sendButton">
+                        Send
+                    </button>
                 </div>
             </div>
         </div>

@@ -21,8 +21,8 @@ export const App = () => {
             <Nav/>
             <Route path='/users'
                    render={() => <UsersContainer/>}/>
-            <Route path={`/user/:userId`} render={() => <PostsContainer/>}/>
-            <Route path={`/user:userId/postInfo:id`} render={() => <PostContainer/>}/>
+            <Route path={`/user/:userId`} exact render={() => <PostsContainer/>}/>
+            <Route path={`/user/:userId/postInfo/:id`}  render={() => <PostContainer/>}/>
         </div>
     );
 }

@@ -2,4 +2,27 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding: 10px;
+}
+
+.navLink {
+    outline: none;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    border: 2px solid indigo;
+    background-color: indigo;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.navLink:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.navLink:active {
+    background-color: indigo;
+    color: white;
 }
