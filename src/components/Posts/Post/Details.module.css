@@ -45,3 +45,10 @@
     margin: 10px auto;
     padding: 15px;
 }
+textarea {
+    outline: none;
+    resize: none;
+    overflow: auto;
+    width: 500px;
+    height: 150px;
+}

@@ -4,7 +4,6 @@ import {commentAPI} from '../api/api';
 type ActionsType = setCommentsAT
 
 export type setCommentsAT = ReturnType<typeof setCommentAC>
-//export type addPostAT = ReturnType<typeof addPostAC>
 
 export type CommentsDataType = {
     postId: number
@@ -38,9 +37,3 @@ export const getCommentsTC = (postId: number) => (dispatch: Dispatch) => {
         dispatch(setCommentAC(res.data))
     });
 }
-// export const addPostTC = (titleValue: string, newText: string) => (dispatch: Dispatch) => {
-//     postsAPI.addPost(titleValue, newText).then(res => {
-//         console.log(res.data)
-//         dispatch(addPostAC(titleValue, newText))
-//     });
-// }

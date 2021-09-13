@@ -5,13 +5,14 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 import {Details} from './Details';
 import {CommentsDataType, getCommentsTC} from '../../../redux/comment-reducer';
-import {deletePostTC, PostsDataType} from '../../../redux/posts-reducer';
+import {deletePostTC, PostsDataType, updatePostTC} from '../../../redux/posts-reducer';
 
 type UserContainerPropsType = {
     comments: Array<CommentsDataType>
     getCommentsTC: (postId: number) => void
     posts: Array<PostsDataType>
     deletePostTC: (postId: number) => void
+    updatePostTC: (body: string, postId: number) => void
 }
 
 type PathParamsType = {
@@ -32,6 +33,7 @@ class PostsContainer extends React.Component<PropsType> {
             <Details comments={this.props.comments}
                      posts={this.props.posts}
                      postId={+this.props.match.params.id}
+                     updatePostTC={this.props.updatePostTC}
                      deletePost={this.props.deletePostTC}/>
         </>
     }
@@ -46,5 +48,5 @@ let mapStateToProps = (state: ReduxStoreType) => {
 
 export default compose<React.ComponentType>(
     withRouter,
-    connect(mapStateToProps, {getCommentsTC, deletePostTC}),
+    connect(mapStateToProps, {getCommentsTC, deletePostTC, updatePostTC}),
 )(PostsContainer)

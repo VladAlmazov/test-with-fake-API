@@ -25,6 +25,11 @@ export const postsAPI = {
     deletePost (postId: number) {
         return instance.delete(`posts/${postId}`)
             .then(res => res)
+    },
+    updatePost (body: string, postId: number) {
+        return instance.put(`posts/${postId}`,
+            {body: body})
+            .then(res => res)
     }
 }
 export const commentAPI = {

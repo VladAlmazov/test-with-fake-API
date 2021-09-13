@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {CommentsDataType} from '../../../redux/comment-reducer';
 import {PostsDataType} from '../../../redux/posts-reducer';
 import style from './Details.module.css'
@@ -8,22 +8,46 @@ type DetailsPropsType = {
     posts: Array<PostsDataType>
     postId: number
     deletePost: (postId: number) => void
+    updatePostTC: (body: string, postId: number) => void
 }
 
 export const Details = (props: DetailsPropsType) => {
+    const postText = String(props.posts.find(p => p.id === +props.postId)?.body);
+    const [editMode, setEditMode] = useState<boolean>(true)
+    const [title, setTitle] = useState<string>(postText)
+
     const deletePost = (postId: number) => {
         props.deletePost(postId)
     }
+
+    const onEditMode = () => setEditMode(false);
+
+    const updatePost = (body: string) => {
+        if (body) {
+            props.updatePostTC(body, props.postId)
+            setTitle(body)
+        }
+        setEditMode(true)
+    }
+
     return (
         <div>
             <div className={`${style.commentsWrapper} ${style.postContainer}`}>
-                <h2>
+                <h2 style={{width: '100%', textAlign: 'center'}}>
                     Post: <br/>
                 </h2>
-                {props.posts.find(p => p.id === +props.postId)?.body}
+                <div onDoubleClick={onEditMode}>
+                    {editMode
+                        ? <p>{postText}</p>
+                        : <textarea autoFocus={true} value={title}
+                                    onChange={(e) => setTitle(e.currentTarget.value)}/>}
+                </div>
             </div>
             <div className={style.buttons}>
-                <button className={style.detailsButton}>Edit</button>
+                <button className={style.detailsButton}
+                        onClick={() => updatePost(title)}>
+                    Edit
+                </button>
                 <button className={style.detailsButton}
                         onClick={() => deletePost(props.postId)}>
                     Delete
